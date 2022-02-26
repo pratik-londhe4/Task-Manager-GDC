@@ -14,9 +14,8 @@ from task_manager.celery import app
 def send_email_report():
     print("Starting to process Emails")
     now = datetime.now().strftime('%H:%M')
-    print("time is now " + now)
 
-    for report in Report.objects.filter(reminder_time=now, diabled=False):
+    for report in Report.objects.filter(reminder_time=now, disabled=False):
         user = User.objects.get(id=report.user.id)
 
         all_tasks = Task.objects.filter(deleted=False, user=user)

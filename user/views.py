@@ -1,9 +1,7 @@
 
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
-from django.shortcuts import render
 from django.views.generic.edit import CreateView
-from django.contrib.auth.models import User
 
 
 class UserCreateView(CreateView):
