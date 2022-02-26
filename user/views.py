@@ -13,7 +13,6 @@ class UserCreateView(CreateView):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        #self.fields['title'].widget.attrs['class'] = 'my_class'
 
 
 class UserLoginView(LoginView):
