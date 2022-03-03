@@ -1,4 +1,5 @@
 release: python manage.py migrate
-web:  config.wsgi:application
-worker: REMAP_SIGTERM=SIGQUIT celery -A config.celery_app worker --loglevel=info
-beat: REMAP_SIGTERM=SIGQUIT celery -A config.celery_app beat --loglevel=info
+web: gunicorn task_manager.wsgi
+worker: REMAP_SIGTERM=SIGQUIT celery -A task_manager.celery worker --loglevel=info
+beat: REMAP_SIGTERM=SIGQUIT celery -A task_manager.celery beat --loglevel=info
+worker_and_beat: REMAP_SIGTERM=SIGQUIT celery -A task_manager.celery worker --loglevel=info -B
