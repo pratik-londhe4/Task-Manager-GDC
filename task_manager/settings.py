@@ -33,7 +33,7 @@ SECRET_KEY = "django-insecure-hn4*^-v@9xjaxl&+-1u$hrl*d5wn^&j5_ir%18$-j2z@77u-g6
 DEBUG = True
 #DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['task-manager-pratik.herokuapp.com']
 
 
 # Application definition
