@@ -33,7 +33,7 @@ SECRET_KEY = "django-insecure-hn4*^-v@9xjaxl&+-1u$hrl*d5wn^&j5_ir%18$-j2z@77u-g6
 DEBUG = True
 #DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['task-manager-pratik.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'task-manager-pratik.herokuapp.com']
 
 
 # Application definition
@@ -87,9 +87,13 @@ WSGI_APPLICATION = "task_manager.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DATABASE_USER'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASS'),
+        'HOST': env('DATABASE_HOST'),
+        'PORT': 5432
     }
 }
 
